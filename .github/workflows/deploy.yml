@@ -1,11 +1,11 @@
-name: CI/CD Workflow
+name: CI/CD Deploy
 on:
   push:
     branches: [ main ]
 jobs:
-  build-and-test:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Run test
-        [cite_start]run: echo "Testing code..."
+      - name: Deploy to Render
+        # Lệnh này sẽ gọi đến Render để yêu cầu cập nhật bản build mới nhất
+        run: curl https://api.render.com/deploy/srv-xxxxxxx?key=yyyyyyy
